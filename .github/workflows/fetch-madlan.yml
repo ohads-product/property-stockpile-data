@@ -1,4 +1,4 @@
-name: Madlan Property Feed
+name: Fetch Madlan Private Listings
 
 on:
   schedule:
@@ -10,106 +10,173 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+
     steps:
       - uses: actions/checkout@v4
 
       - name: Fetch and filter listings
         run: |
-          python3 - << 'PYEOF'
-          import json, urllib.request, urllib.error, datetime, sys
+          node << 'EOF'
+          const https = require('https');
+          const fs   = require('fs');
 
-          NEIGHBORHOOD_MAP = {
-            "שכונה-פלורנטין-תל-אביב-יפו-ישראל": "פלורנטין",
-            "שכונה-הצפון-החדש-החלק-הצפוני-תל-אביב-יפו-ישראל": "הצפון החדש",
-            "שכונה-הצפון-החדש-החלק-הדרומי-תל-אביב-יפו-ישראל": "הצפון החדש",
-            "שכונה-הצפון-החדש-סביבת-כיכר-המדינה-תל-אביב-יפו-ישראל": "הצפון החדש",
-            "שכונה-הצפון-הישן-החלק-הצפוני-תל-אביב-יפו-ישראל": "הצפון הישן",
-            "שכונה-הצפון-הישן-החלק-המרכזי-תל-אביב-יפו-ישראל": "הצפון הישן",
-            "שכונה-הצפון-הישן-החלק-הדרום-מזרחי-תל-אביב-יפו-ישראל": "הצפון הישן",
-            "שכונה-כרם-התימנים-תל-אביב-יפו-ישראל": "כרם התימנים",
+          const TARGETS = ['פלורנטין', 'הצפון-החדש', 'הצפון-הישן', 'כרם-התימנים'];
+
+          function getNeighborhood(b) {
+            const ids = (b.structuredAddress?.relevantDocIds || []).map(r => r.docId);
+            for (const id of ids) {
+              if (id.includes('פלורנטין'))      return 'פלורנטין';
+              if (id.includes('הצפון-החדש'))    return 'הצפון החדש';
+              if (id.includes('הצפון-הישן'))    return 'הצפון הישן';
+              if (id.includes('כרם-התימנים'))   return 'כרם התימנים';
+            }
+            return null;
           }
 
-          QUERY = "query search($input: SearchBulletinQueryInput!) { searchBulletinWithUserPreferences(input: $input) { bulletins { id agentId price rooms area floor totalFloors address { street { name } } relevantDocIds { docId type } publishedAt description { text } } } }"
+          const QUERY = `
+            query search($q: SearchBulletinQueryInput!) {
+              searchBulletinWithUserPreferences(searchQuery: $q) {
+                total
+                bulletins {
+                  id price area floor floors beds sellerType
+                  address
+                  structuredAddress { streetName relevantDocIds { docId type } }
+                  firstTimeSeen
+                  description
+                }
+              }
+            }
+          `;
 
-          HEADERS = {
-            "Content-Type": "application/json",
-            "Accept": "application/json, text/plain, */*",
-            "Accept-Language": "he-IL,he;q=0.9,en-US;q=0.8,en;q=0.7",
-            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36",
-            "Origin": "https://www.madlan.co.il",
-            "Referer": "https://www.madlan.co.il/nadlan/search",
-            "apollo-require-preflight": "true",
-            "sec-fetch-dest": "empty",
-            "sec-fetch-mode": "cors",
-            "sec-fetch-site": "same-origin",
+          function fetchPage(offset) {
+            return new Promise((resolve, reject) => {
+              const body = JSON.stringify({
+                query: QUERY,
+                variables: {
+                  q: {
+                    offset,
+                    limit: 400,
+                    sortType: 'DATE',
+                    sortOrder: 'DESC',
+                    userPreferences: {}
+                  }
+                }
+              });
+              const req = https.request({
+                hostname: 'www.madlan.co.il',
+                path: '/api3',
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                  'Accept': 'application/json',
+                  'User-Agent': 'Mozilla/5.0',
+                  'Content-Length': Buffer.byteLength(body)
+                }
+              }, res => {
+                let data = '';
+                res.on('data', chunk => data += chunk);
+                res.on('end', () => {
+                  if (res.statusCode !== 200) {
+                    reject(new Error(`HTTP ${res.statusCode}: ${data.slice(0, 300)}`));
+                    return;
+                  }
+                  try { resolve(JSON.parse(data)); }
+                  catch (e) { reject(new Error('JSON parse error: ' + data.slice(0, 200))); }
+                });
+              });
+              req.on('error', reject);
+              req.write(body);
+              req.end();
+            });
           }
 
-          all_bulletins = []
-          for offset in [0, 400, 800]:
-            payload = json.dumps({"query": QUERY, "variables": {"input": {"offset": offset, "limit": 400, "sortType": "DATE", "sortOrder": "DESC", "userPreferences": {}}}}).encode("utf-8")
-            req = urllib.request.Request("https://www.madlan.co.il/api3", data=payload, headers=HEADERS, method="POST")
-            try:
-              with urllib.request.urlopen(req, timeout=30) as resp:
-                data = json.loads(resp.read())
-                bulletins = data.get("data", {}).get("searchBulletinWithUserPreferences", {}).get("bulletins", [])
-                all_bulletins.extend(bulletins)
-                print(f"Offset {offset}: {len(bulletins)} bulletins")
-            except urllib.error.HTTPError as e:
-              body = e.read().decode("utf-8", errors="replace")[:800]
-              print(f"Offset {offset} HTTP {e.code}: {body}", file=sys.stderr)
-            except Exception as e:
-              print(f"Offset {offset} error: {e}", file=sys.stderr)
+          async function main() {
+            const collected = [];
+            const now = new Date();
 
-          if not all_bulletins:
-            print("ERROR: no bulletins fetched", file=sys.stderr)
-            sys.exit(1)
+            for (let offset = 0; offset < 2000; offset += 400) {
+              console.log(`Fetching offset ${offset}...`);
+              const result = await fetchPage(offset);
 
-          today = datetime.date.today()
-          seen, listings = set(), []
-          for b in all_bulletins:
-            if b["id"] in seen or b.get("agentId") is not None:
-              continue
-            seen.add(b["id"])
-            doc_ids = [d["docId"] for d in (b.get("relevantDocIds") or [])]
-            neighborhood = next((NEIGHBORHOOD_MAP[d] for d in doc_ids if d in NEIGHBORHOOD_MAP), None)
-            if not neighborhood:
-              continue
-            try:
-              pub_date = datetime.datetime.fromisoformat(b.get("publishedAt","").replace("Z","+00:00")).date()
-              days_ago = (today - pub_date).days
-            except:
-              days_ago = 0
-            size = int(b.get("area") or 0)
-            price = int(b.get("price") or 0)
-            listings.append({
-              "id": b["id"],
-              "neighborhood": neighborhood,
-              "area": ((b.get("address") or {}).get("street") or {}).get("name",""),
-              "size": size,
-              "rooms": b.get("rooms") or 0,
-              "floor": int(b.get("floor") or 0),
-              "totalFloors": int(b.get("totalFloors") or 0),
-              "price": price,
-              "pricePerSqm": round(price/size) if size else 0,
-              "daysAgo": days_ago,
-              "heatLevel": "none", "heatCount": 0, "agentRevealCount": 0,
-              "madadStatus": "at", "exclusiveStatus": None,
-              "contactRevealed": False, "ownerName": None, "ownerPhone": None,
-              "desc": ((b.get("description") or {}).get("text") or "").strip(),
-              "imageUrl": None
-            })
+              if (result.errors) {
+                console.error('GraphQL errors:', JSON.stringify(result.errors));
+                if (offset === 0) process.exit(1);
+                break;
+              }
 
-          listings.sort(key=lambda x: x["daysAgo"])
-          now_utc = datetime.datetime.utcnow().strftime("%H:%M UTC")
-          with open("feed.json", "w", encoding="utf-8") as f:
-            json.dump({"updatedAt": now_utc, "listings": listings}, f, ensure_ascii=False, indent=2)
-          print(f"Wrote {len(listings)} private listings")
-          PYEOF
+              const bulletins = result.data?.searchBulletinWithUserPreferences?.bulletins || [];
+              if (bulletins.length === 0) { console.log('No more bulletins.'); break; }
+
+              const matching = bulletins.filter(b => {
+                if (b.sellerType !== 'private') return false;
+                return TARGETS.some(t =>
+                  (b.structuredAddress?.relevantDocIds || []).some(r => r.docId.includes(t))
+                );
+              });
+
+              console.log(`  ${bulletins.length} fetched, ${matching.length} private+neighborhood`);
+              collected.push(...matching);
+            }
+
+            console.log(`Total: ${collected.length} private listings in target neighborhoods`);
+
+            if (collected.length === 0) {
+              console.error('ERROR: no matching listings found');
+              process.exit(1);
+            }
+
+            const updatedAt =
+              now.getUTCHours().toString().padStart(2,'0') + ':' +
+              now.getUTCMinutes().toString().padStart(2,'0') + ' UTC';
+
+            const listings = collected.map(b => {
+              const firstSeen = b.firstTimeSeen ? new Date(b.firstTimeSeen) : now;
+              const daysAgo   = Math.max(0, Math.floor((now - firstSeen) / 86400000));
+              const floor      = parseInt(b.floor) || 0;
+              const totalFloors = parseInt(b.floors) || 0;
+              const rooms      = b.beds || 0;
+              const size       = Math.round(b.area || 0);
+              const price      = b.price || 0;
+              const pricePerSqm = size > 0 ? Math.round(price / size) : 0;
+              const neighborhood = getNeighborhood(b) || 'אחר';
+
+              return {
+                id: b.id,
+                neighborhood,
+                area: b.structuredAddress?.streetName || b.address || '',
+                size,
+                rooms,
+                floor,
+                totalFloors,
+                price,
+                pricePerSqm,
+                daysAgo,
+                heatLevel: 'none',
+                heatCount: 0,
+                agentRevealCount: 0,
+                madadStatus: 'at',
+                exclusiveStatus: null,
+                contactRevealed: false,
+                ownerName: null,
+                ownerPhone: null,
+                desc: b.description || '',
+                imageUrl: null
+              };
+            });
+
+            listings.sort((a, b) => a.daysAgo - b.daysAgo);
+
+            fs.writeFileSync('feed.json', JSON.stringify({ updatedAt, listings }, null, 2));
+            console.log(`Written feed.json: ${listings.length} listings, updatedAt ${updatedAt}`);
+          }
+
+          main().catch(err => { console.error(err.message); process.exit(1); });
+          EOF
 
       - name: Commit feed.json
         run: |
-          git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
           git add feed.json
-          git diff --staged --quiet || git commit -m "feed: $(date -u '+%Y-%m-%d %H:%M UTC')"
-          git push
+          git diff --staged --quiet && echo "No changes." || git commit -m "chore: refresh private listings feed"
+          git diff --staged --quiet || git push
