@@ -1,0 +1,117 @@
+name: Madlan Property Feed
+
+on:
+  schedule:
+    - cron: '10 * * * *'
+  workflow_dispatch:
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch and filter listings
+        run: |
+          python3 - << 'PYEOF'
+          import json, urllib.request, datetime, sys
+
+          NEIGHBORHOOD_MAP = {
+            "שכונה-פלורנטין-תל-אביב-יפו-ישראל": "פלורנטין",
+            "שכונה-הצפון-החדש-החלק-הצפוני-תל-אביב-יפו-ישראל": "הצפון החדש",
+            "שכונה-הצפון-החדש-החלק-הדרומי-תל-אביב-יפו-ישראל": "הצפון החדש",
+            "שכונה-הצפון-החדש-סביבת-כיכר-המדינה-תל-אביב-יפו-ישראל": "הצפון החדש",
+            "שכונה-הצפון-הישן-החלק-הצפוני-תל-אביב-יפו-ישראל": "הצפון הישן",
+            "שכונה-הצפון-הישן-החלק-המרכזי-תל-אביב-יפו-ישראל": "הצפון הישן",
+            "שכונה-הצפון-הישן-החלק-הדרום-מזרחי-תל-אביב-יפו-ישראל": "הצפון הישן",
+            "שכונה-כרם-התימנים-תל-אביב-יפו-ישראל": "כרם התימנים",
+          }
+
+          QUERY = """query search($input: SearchBulletinQueryInput!) {
+            searchBulletinWithUserPreferences(input: $input) {
+              bulletins {
+                id agentId price rooms area floor totalFloors
+                address { street { name } }
+                relevantDocIds { docId type }
+                publishedAt
+                description { text }
+              }
+            }
+          }"""
+
+          HEADERS = {
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36",
+            "Origin": "https://www.madlan.co.il",
+            "Referer": "https://www.madlan.co.il/",
+          }
+
+          all_bulletins = []
+          for offset in [0, 400, 800]:
+            payload = json.dumps({"query": QUERY, "variables": {"input": {"offset": offset, "limit": 400, "sortType": "DATE", "sortOrder": "DESC", "userPreferences": {}}}}).encode("utf-8")
+            req = urllib.request.Request("https://www.madlan.co.il/api3", data=payload, headers=HEADERS, method="POST")
+            try:
+              with urllib.request.urlopen(req, timeout=30) as resp:
+                data = json.loads(resp.read())
+                bulletins = data.get("data", {}).get("searchBulletinWithUserPreferences", {}).get("bulletins", [])
+                all_bulletins.extend(bulletins)
+                print(f"Offset {offset}: {len(bulletins)} bulletins")
+            except Exception as e:
+              print(f"Offset {offset} error: {e}", file=sys.stderr)
+
+          if not all_bulletins:
+            print("ERROR: no bulletins fetched", file=sys.stderr)
+            sys.exit(1)
+
+          today = datetime.date.today()
+          seen, listings = set(), []
+          for b in all_bulletins:
+            if b["id"] in seen or b.get("agentId") is not None:
+              continue
+            seen.add(b["id"])
+            doc_ids = [d["docId"] for d in (b.get("relevantDocIds") or [])]
+            neighborhood = next((NEIGHBORHOOD_MAP[d] for d in doc_ids if d in NEIGHBORHOOD_MAP), None)
+            if not neighborhood:
+              continue
+            try:
+              pub_date = datetime.datetime.fromisoformat(b.get("publishedAt","").replace("Z","+00:00")).date()
+              days_ago = (today - pub_date).days
+            except:
+              days_ago = 0
+            size = int(b.get("area") or 0)
+            price = int(b.get("price") or 0)
+            listings.append({
+              "id": b["id"],
+              "neighborhood": neighborhood,
+              "area": ((b.get("address") or {}).get("street") or {}).get("name",""),
+              "size": size,
+              "rooms": b.get("rooms") or 0,
+              "floor": int(b.get("floor") or 0),
+              "totalFloors": int(b.get("totalFloors") or 0),
+              "price": price,
+              "pricePerSqm": round(price/size) if size else 0,
+              "daysAgo": days_ago,
+              "heatLevel": "none", "heatCount": 0, "agentRevealCount": 0,
+              "madadStatus": "at", "exclusiveStatus": None,
+              "contactRevealed": False, "ownerName": None, "ownerPhone": None,
+              "desc": ((b.get("description") or {}).get("text") or "").strip(),
+              "imageUrl": None
+            })
+
+          listings.sort(key=lambda x: x["daysAgo"])
+          now_utc = datetime.datetime.utcnow().strftime("%H:%M UTC")
+          with open("feed.json", "w", encoding="utf-8") as f:
+            json.dump({"updatedAt": now_utc, "listings": listings}, f, ensure_ascii=False, indent=2)
+          print(f"Wrote {len(listings)} private listings")
+          PYEOF
+
+      - name: Commit feed.json
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add feed.json
+          git diff --staged --quiet || git commit -m "feed: $(date -u '+%Y-%m-%d %H:%M UTC')"
+          git push
