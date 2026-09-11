@@ -1,5 +1,5 @@
 {
-  "updatedAt": "16:24 UTC",
+  "updatedAt": "19:38 UTC",
   "listings": [
     {
       "id": "26w46SI1LvV",
@@ -231,7 +231,7 @@
       "totalFloors": 0,
       "price": 9500,
       "pricePerSqm": 68,
-      "daysAgo": 4,
+      "daysAgo": 5,
       "heatLevel": "none",
       "heatCount": 0,
       "agentRevealCount": 0,
@@ -253,7 +253,7 @@
       "totalFloors": 7,
       "price": 5300000,
       "pricePerSqm": 58889,
-      "daysAgo": 4,
+      "daysAgo": 5,
       "heatLevel": "none",
       "heatCount": 0,
       "agentRevealCount": 0,
@@ -319,7 +319,7 @@
       "totalFloors": 5,
       "price": 6250,
       "pricePerSqm": 139,
-      "daysAgo": 6,
+      "daysAgo": 7,
       "heatLevel": "none",
       "heatCount": 0,
       "agentRevealCount": 0,
