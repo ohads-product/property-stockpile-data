@@ -1,5 +1,5 @@
 {
-  "updatedAt": "10:40 UTC",
+  "updatedAt": "14:03 UTC",
   "listings": [
     {
       "id": "FnAKc3rpoP6",
@@ -20,7 +20,7 @@
       "contactRevealed": false,
       "ownerName": null,
       "ownerPhone": null,
-      "desc": "להשכרה בבניין חדש לשימור בפלורנטין, דירת שלושה חדרים חלומית עם מטבח מאו��זר כולל מדיח, תנור , מקרר וכיריים אינדוקציה. אופציה לריהוט מלא בדירה לפי דרישה רק להיכנס ולהרגיש בבית",
+      "desc": "להשכרה בבניין חדש לשימור בפלורנטין, דירת שלושה חדרים חלומית עם מטבח מאובזר כולל מדיח, תנור , מקרר וכיריים אינדוקציה. אופציה לריהוט מלא בדירה לפי דרישה רק להיכנס ולהרגיש בבית",
       "imageUrl": null
     },
     {
@@ -33,7 +33,7 @@
       "totalFloors": 7,
       "price": 6200000,
       "pricePerSqm": 80519,
-      "daysAgo": 1,
+      "daysAgo": 2,
       "heatLevel": "none",
       "heatCount": 0,
       "agentRevealCount": 0,
@@ -55,7 +55,7 @@
       "totalFloors": 0,
       "price": 3975,
       "pricePerSqm": 44,
-      "daysAgo": 1,
+      "daysAgo": 2,
       "heatLevel": "none",
       "heatCount": 0,
       "agentRevealCount": 0,
@@ -165,7 +165,7 @@
       "totalFloors": 7,
       "price": 13000,
       "pricePerSqm": 200,
-      "daysAgo": 4,
+      "daysAgo": 5,
       "heatLevel": "none",
       "heatCount": 0,
       "agentRevealCount": 0,
@@ -187,7 +187,7 @@
       "totalFloors": 6,
       "price": 8800,
       "pricePerSqm": 70,
-      "daysAgo": 4,
+      "daysAgo": 5,
       "heatLevel": "none",
       "heatCount": 0,
       "agentRevealCount": 0,
@@ -363,7 +363,7 @@
       "totalFloors": 6,
       "price": 30000,
       "pricePerSqm": 273,
-      "daysAgo": 7,
+      "daysAgo": 8,
       "heatLevel": "none",
       "heatCount": 0,
       "agentRevealCount": 0,
