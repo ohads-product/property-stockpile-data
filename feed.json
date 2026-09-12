@@ -1,5 +1,5 @@
 {
-  "updatedAt": "19:15 UTC",
+  "updatedAt": "22:13 UTC",
   "listings": [
     {
       "id": "zkUiHtvPhfr",
@@ -42,7 +42,7 @@
       "contactRevealed": false,
       "ownerName": null,
       "ownerPhone": null,
-      "desc": "דירת שלושה חדרים בבנייה ותכנון מרווח של פעם עם עיצוב מעודכן. מרפסת קדמית פונה לשדרה, מרפסת קטנה אחורית בחדר ההורים.\nבדירה:\n\n• חדר רחצה עם אמבטיה ושירותים\n• שירותי אורחים נפרדים\n• שלושה מזגנים חדשים — אחד בכל חדר\n• ארונות בחדרי השינה\n• תנור וכיריים\n• פרקט עץ\n• דוד שמש\n• מעלית\n• חניה פרטית בטאבו, עם מחסום וחייגן\n• כניסה לבניין באמצעות רמפה ומעלית\n• מקלט תקני בבניין\n\nבניין שקט ומשפחתי.",
+      "desc": "דירת שלושה חדרים בבנייה ותכנון מרווח של פעם עם עיצוב מעודכן. מרפסת קדמית פונה לשדרה, מרפסת קטנה אחורית בחדר ההורים.\nבדירה:\n\n• חדר רחצה עם אמבטיה ושירותים\n• שירותי אורחים נפרדים\n• שלושה מזגנים חדשים — אחד בכל חדר\n• ארונות בחדרי השינה\n• תנור וכיריים\n• פרקט עץ\n• דוד שמש\n• מעלית\n• חניה פרטית בטאבו, עם מ��סום וחייגן\n• כניסה לבניין באמצעות רמפה ומעלית\n• מקלט תקני בבניין\n\nבניין שקט ומשפחתי.",
       "imageUrl": null
     },
     {
@@ -55,7 +55,7 @@
       "totalFloors": 6,
       "price": 9500,
       "pricePerSqm": 156,
-      "daysAgo": 0,
+      "daysAgo": 1,
       "heatLevel": "none",
       "heatCount": 0,
       "agentRevealCount": 0,
@@ -275,7 +275,7 @@
       "totalFloors": 6,
       "price": 7500,
       "pricePerSqm": 160,
-      "daysAgo": 5,
+      "daysAgo": 6,
       "heatLevel": "none",
       "heatCount": 0,
       "agentRevealCount": 0,
@@ -297,7 +297,7 @@
       "totalFloors": 0,
       "price": 9500,
       "pricePerSqm": 68,
-      "daysAgo": 5,
+      "daysAgo": 6,
       "heatLevel": "none",
       "heatCount": 0,
       "agentRevealCount": 0,
@@ -385,7 +385,7 @@
       "totalFloors": 5,
       "price": 6250,
       "pricePerSqm": 139,
-      "daysAgo": 7,
+      "daysAgo": 8,
       "heatLevel": "none",
       "heatCount": 0,
       "agentRevealCount": 0,
