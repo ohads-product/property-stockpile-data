@@ -1,6 +1,28 @@
 {
-  "updatedAt": "14:03 UTC",
+  "updatedAt": "17:04 UTC",
   "listings": [
+    {
+      "id": "JVS5XrFJcSz",
+      "neighborhood": "הצפון הישן",
+      "area": "בן גוריון",
+      "size": 87,
+      "rooms": 3,
+      "floor": 2,
+      "totalFloors": 5,
+      "price": 12500,
+      "pricePerSqm": 144,
+      "daysAgo": 0,
+      "heatLevel": "none",
+      "heatCount": 0,
+      "agentRevealCount": 0,
+      "madadStatus": "at",
+      "exclusiveStatus": null,
+      "contactRevealed": false,
+      "ownerName": null,
+      "ownerPhone": null,
+      "desc": "דירת שלושה חדרים בבנייה ותכנון מרווח של פעם עם עיצוב מעודכן. מרפסת קדמית פונה לשדרה, מרפסת קטנה אחורית בחדר ההורים.\nבדירה:\n\n• חדר רחצה עם אמבטיה ושירותים\n• שירותי אורחים נפרדים\n• שלושה מזגנים חדשים — אחד בכל חדר\n• ארונות בחדרי השינה\n• תנור וכיריים\n• פרקט עץ\n• דוד שמש\n• מעלית\n• חניה פרטית בטאבו, עם מחסום וחייגן\n• כניסה לבניין באמצעות רמפה ומעלית\n• מקלט תקני בבניין\n\nבניין שקט ומשפחתי.",
+      "imageUrl": null
+    },
     {
       "id": "FnAKc3rpoP6",
       "neighborhood": "פלורנטין",
@@ -319,7 +341,7 @@
       "totalFloors": 3,
       "price": 13000,
       "pricePerSqm": 130,
-      "daysAgo": 6,
+      "daysAgo": 7,
       "heatLevel": "none",
       "heatCount": 0,
       "agentRevealCount": 0,
