@@ -1,6 +1,28 @@
 {
-  "updatedAt": "17:04 UTC",
+  "updatedAt": "19:15 UTC",
   "listings": [
+    {
+      "id": "zkUiHtvPhfr",
+      "neighborhood": "הצפון החדש",
+      "area": "זלוציסטי",
+      "size": 74,
+      "rooms": 3,
+      "floor": 2,
+      "totalFloors": 4,
+      "price": 9100,
+      "pricePerSqm": 123,
+      "daysAgo": 0,
+      "heatLevel": "none",
+      "heatCount": 0,
+      "agentRevealCount": 0,
+      "madadStatus": "at",
+      "exclusiveStatus": null,
+      "contactRevealed": false,
+      "ownerName": null,
+      "ownerPhone": null,
+      "desc": "דירת שלושה חדרים עם סלון גדול, פינת אוכל ומטבח גדולים, מזגן מרכזי, הדירה שמורה, מרוהטת עם מעלית, חנייה ומקלט, 3 כיווני אוויר. רחוב שקט, קרוב לבי\"ח חולים איכילוב.",
+      "imageUrl": null
+    },
     {
       "id": "JVS5XrFJcSz",
       "neighborhood": "הצפון הישן",
@@ -297,7 +319,7 @@
       "totalFloors": 7,
       "price": 5300000,
       "pricePerSqm": 58889,
-      "daysAgo": 5,
+      "daysAgo": 6,
       "heatLevel": "none",
       "heatCount": 0,
       "agentRevealCount": 0,
