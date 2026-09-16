@@ -1,5 +1,5 @@
 {
-  "updatedAt": "21:17 UTC",
+  "updatedAt": "00:13 UTC",
   "listings": [
     {
       "id": "acdRwW645Go",
@@ -33,7 +33,7 @@
       "totalFloors": 9,
       "price": 8500,
       "pricePerSqm": 163,
-      "daysAgo": 0,
+      "daysAgo": 1,
       "heatLevel": "none",
       "heatCount": 0,
       "agentRevealCount": 0,
