@@ -1,6 +1,28 @@
 {
-  "updatedAt": "01:20 UTC",
+  "updatedAt": "07:34 UTC",
   "listings": [
+    {
+      "id": "dnPZNc2f9X0",
+      "neighborhood": "הצפון הישן",
+      "area": "בן יהודה",
+      "size": 60,
+      "rooms": 3,
+      "floor": 2,
+      "totalFloors": 4,
+      "price": 10000,
+      "pricePerSqm": 167,
+      "daysAgo": 0,
+      "heatLevel": "none",
+      "heatCount": 0,
+      "agentRevealCount": 0,
+      "madadStatus": "at",
+      "exclusiveStatus": null,
+      "contactRevealed": false,
+      "ownerName": null,
+      "ownerPhone": null,
+      "desc": "🌊להשכרה ברחוב נחום הנביא  – דירת 3 חדרים  משופצת עם ממ״ד בדירה\n\nדירה מיוחדת ומושקעת, כ־60 מ\"ר.\n\nדירה מעוצבת אדריכלית בקפידה וב\nרמה גבוהה, מוארת ונעימה.\n\n✨ 3 חדרים (סלון גדול, חדר שינה וממ״ד)\n\n✨ כ־60 מ\"ר בנוי\n✨ מעוצבת אדריכלית\n✨מוארת מאוד\n✨מזגנים חדשים \nהליכה מהים, מהנמל ומדיזנגוף\n✨מטבח חדש - מגיע עם תנור וכיריים חדשים\n✨ נוף פתוח",
+      "imageUrl": null
+    },
     {
       "id": "R1a3NYZgFAa",
       "neighborhood": "הצפון הישן",
