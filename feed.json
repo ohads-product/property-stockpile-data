@@ -1,5 +1,5 @@
 {
-  "updatedAt": "05:51 UTC",
+  "updatedAt": "11:07 UTC",
   "listings": [
     {
       "id": "MfwCTdGIgZa",
@@ -209,7 +209,7 @@
       "totalFloors": 1,
       "price": 15500,
       "pricePerSqm": 141,
-      "daysAgo": 3,
+      "daysAgo": 4,
       "heatLevel": "none",
       "heatCount": 0,
       "agentRevealCount": 0,
@@ -363,7 +363,7 @@
       "totalFloors": 4,
       "price": 7900,
       "pricePerSqm": 122,
-      "daysAgo": 7,
+      "daysAgo": 8,
       "heatLevel": "none",
       "heatCount": 0,
       "agentRevealCount": 0,
