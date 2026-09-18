@@ -1,5 +1,5 @@
 {
-  "updatedAt": "18:22 UTC",
+  "updatedAt": "21:37 UTC",
   "listings": [
     {
       "id": "d99RLk1xXKK",
@@ -209,7 +209,7 @@
       "totalFloors": 9,
       "price": 8500,
       "pricePerSqm": 163,
-      "daysAgo": 3,
+      "daysAgo": 4,
       "heatLevel": "none",
       "heatCount": 0,
       "agentRevealCount": 0,
@@ -319,7 +319,7 @@
       "totalFloors": 4,
       "price": 8750,
       "pricePerSqm": 118,
-      "daysAgo": 5,
+      "daysAgo": 6,
       "heatLevel": "none",
       "heatCount": 0,
       "agentRevealCount": 0,
@@ -341,7 +341,7 @@
       "totalFloors": 6,
       "price": 9000,
       "pricePerSqm": 148,
-      "daysAgo": 6,
+      "daysAgo": 7,
       "heatLevel": "none",
       "heatCount": 0,
       "agentRevealCount": 0,
