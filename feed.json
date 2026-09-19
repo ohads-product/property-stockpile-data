@@ -1,5 +1,5 @@
 {
-  "updatedAt": "17:57 UTC",
+  "updatedAt": "20:34 UTC",
   "listings": [
     {
       "id": "6eUuqbkuwAY",
@@ -64,7 +64,7 @@
       "contactRevealed": false,
       "ownerName": null,
       "ownerPhone": null,
-      "desc": "✨ BOUTIQUE SPACES | PINSKER 56\nלוקיישן קטן עם פוטנציאל גדול, בלב תל אביב ובמרחק צעדים מכיכר דיזנגוף.\nחללי בוטיק ייחודיים עם חזית לרחוב ונוכחות מצוינת, המתאימים למגוון רחב של קונספטים, ולייף סטייל.\n פינסקר 56, תל אביב\nליד כיכר דיזנגוף\nמחפשים מקום מיוחד ?\nלפרטים ותיאום פגישה בפרטי.",
+      "desc": "✨ BOUTIQUE SPACES | PINSKER 56\nלוקיישן קטן עם פוטנציאל גדול, בלב תל אביב ובמרחק צעדים מכיכר דיזנגוף.\nחללי בוטיק ייחודיים עם חזית לרחוב ונוכחות מצוינת, המתאימים למגוון רחב של קונ��פטים, ולייף סטייל.\n פינסקר 56, תל אביב\nליד כיכר דיזנגוף\nמחפשים מקום מיוחד ?\nלפרטים ותיאום פגישה בפרטי.",
       "imageUrl": null
     },
     {
@@ -187,7 +187,7 @@
       "totalFloors": 4,
       "price": 5950,
       "pricePerSqm": 198,
-      "daysAgo": 2,
+      "daysAgo": 3,
       "heatLevel": "none",
       "heatCount": 0,
       "agentRevealCount": 0,
@@ -341,7 +341,7 @@
       "totalFloors": 6,
       "price": 9000,
       "pricePerSqm": 148,
-      "daysAgo": 7,
+      "daysAgo": 8,
       "heatLevel": "none",
       "heatCount": 0,
       "agentRevealCount": 0,
