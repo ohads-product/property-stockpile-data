@@ -1,6 +1,28 @@
 {
-  "updatedAt": "05:47 UTC",
+  "updatedAt": "10:51 UTC",
   "listings": [
+    {
+      "id": "6eUuqbkuwAY",
+      "neighborhood": "פלורנטין",
+      "area": "חזקיהו המלך",
+      "size": 55,
+      "rooms": 2,
+      "floor": 0,
+      "totalFloors": 1,
+      "price": 4250,
+      "pricePerSqm": 77,
+      "daysAgo": 0,
+      "heatLevel": "none",
+      "heatCount": 0,
+      "agentRevealCount": 0,
+      "madadStatus": "at",
+      "exclusiveStatus": null,
+      "contactRevealed": false,
+      "ownerName": null,
+      "ownerPhone": null,
+      "desc": "דירה כיפית עם מרפסת כניסה, במרחק קצר מפלורנטין.",
+      "imageUrl": null
+    },
     {
       "id": "d99RLk1xXKK",
       "neighborhood": "הצפון הישן",
@@ -108,7 +130,7 @@
       "contactRevealed": false,
       "ownerName": null,
       "ownerPhone": null,
-      "desc": "למכירה בארבע ארצות המבוקש – הצפון הישן!\nמראים השבוע!\nדירת 70 מ\"ר, קומה 3, עורפית, שקטה ופונה לגינה.\nהבניין נמצא בתהליך תמ\"א מתקדם.\nעם השלמת הפרויקט צפויה להתקבל דירה משודרגת של כ־72 מ\"ר, הכוללת:\nקומה 5 | מרפסת שמש | חניה | ממ\"ד\nמחיר מבוקש: 3.65 מיליון ₪ בלבד!\n3 מ��\"ח ברכישת הדירה,\n650,000 ש\"ח עם סיום התמ\"א.\nמושכרת ב-8,900 ש\"ח לחודש!\nלפרטים ותיאום ביקור:\nגל |",
+      "desc": "למכירה בארבע ארצות המבוקש – הצפון הישן!\nמראים השבוע!\nדירת 70 מ\"ר, קומה 3, עורפית, שקטה ופונה לגינה.\nהבניין נמצא בתהליך תמ\"א מתקדם.\nעם השלמת הפרויקט צפויה להתקבל דירה משודרגת של כ־72 מ\"ר, הכוללת:\nקומה 5 | מרפסת שמש | חניה | ממ\"ד\nמחיר מבוקש: 3.65 מיליון ₪ בלבד!\n3 מש\"ח ברכישת הדירה,\n650,000 ש\"ח עם סיום התמ\"א.\nמושכרת ב-8,900 ש\"ח לחודש!\nלפרטים ותיאום ביקור:\nגל |",
       "imageUrl": null
     },
     {
@@ -253,7 +275,7 @@
       "totalFloors": 1,
       "price": 15500,
       "pricePerSqm": 141,
-      "daysAgo": 4,
+      "daysAgo": 5,
       "heatLevel": "none",
       "heatCount": 0,
       "agentRevealCount": 0,
