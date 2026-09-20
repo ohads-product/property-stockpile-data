@@ -1,5 +1,5 @@
 {
-  "updatedAt": "18:43 UTC",
+  "updatedAt": "21:29 UTC",
   "listings": [
     {
       "id": "TJjAgsDvHa3",
@@ -253,7 +253,7 @@
       "totalFloors": 9,
       "price": 8500,
       "pricePerSqm": 163,
-      "daysAgo": 5,
+      "daysAgo": 6,
       "heatLevel": "none",
       "heatCount": 0,
       "agentRevealCount": 0,
@@ -363,7 +363,7 @@
       "totalFloors": 6,
       "price": 9000,
       "pricePerSqm": 148,
-      "daysAgo": 8,
+      "daysAgo": 9,
       "heatLevel": "none",
       "heatCount": 0,
       "agentRevealCount": 0,
