@@ -1,5 +1,5 @@
 {
-  "updatedAt": "00:25 UTC",
+  "updatedAt": "05:54 UTC",
   "listings": [
     {
       "id": "QnJsBHLMidD",
@@ -11,7 +11,7 @@
       "totalFloors": 4,
       "price": 8650,
       "pricePerSqm": 117,
-      "daysAgo": 0,
+      "daysAgo": 1,
       "heatLevel": "none",
       "heatCount": 0,
       "agentRevealCount": 0,
@@ -141,8 +141,8 @@
       "rooms": 3,
       "floor": 5,
       "totalFloors": 6,
-      "price": 3000000,
-      "pricePerSqm": 37037,
+      "price": 3650000,
+      "pricePerSqm": 45062,
       "daysAgo": 5,
       "heatLevel": "none",
       "heatCount": 0,
@@ -187,7 +187,7 @@
       "totalFloors": 4,
       "price": 10000,
       "pricePerSqm": 167,
-      "daysAgo": 5,
+      "daysAgo": 6,
       "heatLevel": "none",
       "heatCount": 0,
       "agentRevealCount": 0,
