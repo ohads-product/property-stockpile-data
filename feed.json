@@ -1,6 +1,28 @@
 {
-  "updatedAt": "20:16 UTC",
+  "updatedAt": "23:38 UTC",
   "listings": [
+    {
+      "id": "eGM0xT0sDXj",
+      "neighborhood": "הצפון החדש",
+      "area": "פינלס",
+      "size": 68,
+      "rooms": 2.5,
+      "floor": 1,
+      "totalFloors": 3,
+      "price": 3800000,
+      "pricePerSqm": 55882,
+      "daysAgo": 0,
+      "heatLevel": "none",
+      "heatCount": 0,
+      "agentRevealCount": 0,
+      "madadStatus": "at",
+      "exclusiveStatus": null,
+      "contactRevealed": false,
+      "ownerName": null,
+      "ownerPhone": null,
+      "desc": "למכירה ללא תיווך – דירת 2.5 חדרים ברחוב פינלס המבוקש, בקרבת פארק הירקון.\nדירה מקסימה ומוארת, ברחוב שקט ונעים באחת השכונות המבוקשות בצפון החדש של תל אביב. הדירה עברה שיפוץ יסודי ומעוצב ונשמרה היטב לאורך השנים. מיקום מצוין למשפחות, במרחק הליכה מפארק הירקון ובקרבה לבתי ספר, גנים, בתי קפה ומוקדי הבילוי של האזור. הבניין נמצא בתהליך לקידום פרויקט הריסה ובנייה, הנמצא כיום בשלבי תכנון ובחינה וטרם התקבל היתר בנייה. לנכס פוטנציאל עתידי משמעותי במסגרת התחדשות הבניין והשבחת הדירה.\nמתאימה למגורים או להשקעה.",
+      "imageUrl": null
+    },
     {
       "id": "Oo1cicfTFCY",
       "neighborhood": "הצפון הישן",
@@ -275,7 +297,7 @@
       "totalFloors": 9,
       "price": 8500,
       "pricePerSqm": 163,
-      "daysAgo": 8,
+      "daysAgo": 9,
       "heatLevel": "none",
       "heatCount": 0,
       "agentRevealCount": 0,
