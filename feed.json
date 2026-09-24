@@ -1,6 +1,28 @@
 {
-  "updatedAt": "19:04 UTC",
+  "updatedAt": "22:19 UTC",
   "listings": [
+    {
+      "id": "g3yPA48lZIP",
+      "neighborhood": "הצפון הישן",
+      "area": "סוקולוב",
+      "size": 51,
+      "rooms": 2.5,
+      "floor": 1,
+      "totalFloors": 4,
+      "price": 8100,
+      "pricePerSqm": 159,
+      "daysAgo": 0,
+      "heatLevel": "none",
+      "heatCount": 0,
+      "agentRevealCount": 0,
+      "madadStatus": "at",
+      "exclusiveStatus": null,
+      "contactRevealed": false,
+      "ownerName": null,
+      "ownerPhone": null,
+      "desc": "התפנתה דירה מקסימה☺️ בבנין אינטימי במיקום מעולה בקרבה לים⛱️, לבתי קפה איניים ☕️ולתחבורה ציבורית🚌. מרוהטת ומאובזרת קומפלט🏚️ כולל פינת עבודה מושלמת💻.חלונות ��בודדים, דירה מוארת☀️ המתוכננת היטב וממוזגת. יש מקלט ומעלית🛗. סרטון🎬 ישלח לפי פניה. ואם יורשה-בעלי הבית ממש נחמדים😇.",
+      "imageUrl": null
+    },
     {
       "id": "m0ihGb6dDLt",
       "neighborhood": "כרם התימנים",
@@ -77,7 +99,7 @@
       "totalFloors": 3,
       "price": 3800000,
       "pricePerSqm": 55882,
-      "daysAgo": 0,
+      "daysAgo": 1,
       "heatLevel": "none",
       "heatCount": 0,
       "agentRevealCount": 0,
