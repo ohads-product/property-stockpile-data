@@ -1,5 +1,5 @@
 {
-  "updatedAt": "07:35 UTC",
+  "updatedAt": "13:00 UTC",
   "listings": [
     {
       "id": "WbZ9WbZQXbv",
@@ -20,7 +20,7 @@
       "contactRevealed": false,
       "ownerName": null,
       "ownerPhone": null,
-      "desc": "דירה מקסימה. משופצת  מן היסוד. 68 מ\"ר. מוארת. אוורירית. ירוקה. בנין מטופח. קודן. שלושה מזגנים. רב בריח. מקלט-בבית הסמוך 2 דקות הליכה רגילה. בלי דמנ תיווך-מפרטי. 4,500,000₪.",
+      "desc": "דירה מקסימה. משופצת  מן היסוד. 68 מ\"ר. מוארת. אוורירית. ירוקה. בנין מטופח. קודן. ��לושה מזגנים. רב בריח. מקלט-בבית הסמוך 2 דקות הליכה רגילה. בלי דמנ תיווך-מפרטי. 4,500,000₪.",
       "imageUrl": null
     },
     {
@@ -55,7 +55,7 @@
       "totalFloors": 3,
       "price": 8750,
       "pricePerSqm": 97,
-      "daysAgo": 0,
+      "daysAgo": 1,
       "heatLevel": "none",
       "heatCount": 0,
       "agentRevealCount": 0,
@@ -152,7 +152,7 @@
       "contactRevealed": false,
       "ownerName": null,
       "ownerPhone": null,
-      "desc": "השכרה בכיכר מילאנו — דירת 4 חדרים כולל ממ\"ד, חדשה יוקרתית בקומה גבוהה בבניין חדש ✨ בתוספת מרפסת שמש (סה\"כ- 92 מ\"ר) המרפסת עמוקה לכיוון דרום מערב חניה רגילה תת קרקעית ומחסן צמוד  , בצפון הישן של תל אביב לפרטים נוספים ולתיאום ביקור, מוזמנים לפנות בפרטי. הדירה מושכת AS IS ריקה התמונה להמחשה בלבד",
+      "desc": "השכרה בכיכר מילאנו — דירת 4 חדרים כולל ממ\"ד, חדשה יוקרתית משודרגת בקומה גבוהה בבניין חדש ✨ בתוספת מרפסת שמש (סה\"כ- 92 מ\"ר) המרפסת עמוקה לכיוון דרום מערב חניה רגילה תת קרקעית ומחסן צמוד , בצפון הישן של תל אביב לפרטים נוספים ולתיאום ביקור, מוזמנים לפנות בפרטי. הדירה מושכת AS IS ריקה התמונה להמחשה בלבד כניסה 1.10.2026",
       "imageUrl": null
     },
     {
@@ -165,7 +165,7 @@
       "totalFloors": 4,
       "price": 8950,
       "pricePerSqm": 112,
-      "daysAgo": 1,
+      "daysAgo": 2,
       "heatLevel": "none",
       "heatCount": 0,
       "agentRevealCount": 0,
@@ -253,7 +253,7 @@
       "totalFloors": 4,
       "price": 12000,
       "pricePerSqm": 132,
-      "daysAgo": 5,
+      "daysAgo": 6,
       "heatLevel": "none",
       "heatCount": 0,
       "agentRevealCount": 0,
@@ -275,7 +275,7 @@
       "totalFloors": 1,
       "price": 4250,
       "pricePerSqm": 77,
-      "daysAgo": 6,
+      "daysAgo": 7,
       "heatLevel": "none",
       "heatCount": 0,
       "agentRevealCount": 0,
@@ -297,7 +297,7 @@
       "totalFloors": 7,
       "price": 10000,
       "pricePerSqm": 137,
-      "daysAgo": 7,
+      "daysAgo": 8,
       "heatLevel": "none",
       "heatCount": 0,
       "agentRevealCount": 0,
