@@ -1,5 +1,5 @@
 {
-  "updatedAt": "01:22 UTC",
+  "updatedAt": "08:03 UTC",
   "listings": [
     {
       "id": "tTJTKaNQWwP",
@@ -20,7 +20,7 @@
       "contactRevealed": false,
       "ownerName": null,
       "ownerPhone": null,
-      "desc": "Prime Location \n Dizengoff Square Tlv\n\nחנויות בוטיק קטנות וייחודיות למכירה בכיכר דיזנגוף ,תל אביב.\nפסי לפני תחילת עבודות הבנייה.\n\nמיקרו־מסחר תל־אביבי קלאסי במיקום שקשה לשחזר.\n\nSpecial Pre-Sale עד 1.10\nמחיר השקה חד־פעמי ותנאי תשלום מיוחדים לרוכשים רצי��יים.\n\nלפרטים נוספים חייגו.",
+      "desc": "Prime Location \n Dizengoff Square Tlv\n\nחנויות בוטיק קטנות וייחודיות למכירה בכיכר דיזנגוף ,תל אביב.\nפסי לפני תחילת עבודות הבנייה.\n\nמיקרו־מסחר תל־אביבי קלאסי במיקום שקשה לשחזר.\n\nSpecial Pre-Sale עד 1.10\nמחיר השקה חד־פעמי ותנאי תשלום מיוחדים לרוכשים רציניים.\n\nלפרטים נוספים חייגו.",
       "imageUrl": null
     },
     {
@@ -55,7 +55,7 @@
       "totalFloors": 4,
       "price": 4500000,
       "pricePerSqm": 66176,
-      "daysAgo": 0,
+      "daysAgo": 1,
       "heatLevel": "none",
       "heatCount": 0,
       "agentRevealCount": 0,
@@ -99,7 +99,7 @@
       "totalFloors": 3,
       "price": 8750,
       "pricePerSqm": 97,
-      "daysAgo": 1,
+      "daysAgo": 2,
       "heatLevel": "none",
       "heatCount": 0,
       "agentRevealCount": 0,
@@ -121,7 +121,7 @@
       "totalFloors": 7,
       "price": 7500,
       "pricePerSqm": 170,
-      "daysAgo": 1,
+      "daysAgo": 2,
       "heatLevel": "none",
       "heatCount": 0,
       "agentRevealCount": 0,
@@ -275,7 +275,7 @@
       "totalFloors": 4,
       "price": 8650,
       "pricePerSqm": 117,
-      "daysAgo": 4,
+      "daysAgo": 5,
       "heatLevel": "none",
       "heatCount": 0,
       "agentRevealCount": 0,
@@ -451,7 +451,7 @@
       "totalFloors": 4,
       "price": 10000,
       "pricePerSqm": 167,
-      "daysAgo": 9,
+      "daysAgo": 10,
       "heatLevel": "none",
       "heatCount": 0,
       "agentRevealCount": 0,
