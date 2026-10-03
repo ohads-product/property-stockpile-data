@@ -1,5 +1,5 @@
 {
-  "updatedAt": "12:28 UTC",
+  "updatedAt": "17:13 UTC",
   "listings": [
     {
       "id": "ncJDsZ9lUON",
@@ -55,7 +55,7 @@
       "totalFloors": 6,
       "price": 15000,
       "pricePerSqm": 98,
-      "daysAgo": 0,
+      "daysAgo": 1,
       "heatLevel": "none",
       "heatCount": 0,
       "agentRevealCount": 0,
@@ -152,7 +152,7 @@
       "contactRevealed": false,
       "ownerName": null,
       "ownerPhone": null,
-      "desc": "מפרטי !!!\nדירה מקסימה ברחוב ויטל, מוארת. 2.5 חדרים. החצי חדר הוא חדר ארונות. מרפסת קטנה וחניה פרטית בט��בו. הדירה פונה לרחוב ויטל.\nקומה ראשונה עם מעלית, ממ\"ק.\nבית קפה שכונתי ומאפיה ממול לדירה.",
+      "desc": "מפרטי !!!\nדירה מקסימה ברחוב ויטל, מוארת. 2.5 חדרים. החצי חדר הוא חדר ארונות. מרפסת קטנה וחניה פרטית בטאבו. הדירה פונה לרחוב ויטל.\nקומה ראשונה עם מעלית, ממ\"ק.\nבית קפה שכונתי ומאפיה ממול לדירה.",
       "imageUrl": null
     },
     {
@@ -209,7 +209,7 @@
       "totalFloors": 4,
       "price": 3650000,
       "pricePerSqm": 45625,
-      "daysAgo": 5,
+      "daysAgo": 6,
       "heatLevel": "none",
       "heatCount": 0,
       "agentRevealCount": 0,
@@ -253,7 +253,7 @@
       "totalFloors": 8,
       "price": 10000,
       "pricePerSqm": 112,
-      "daysAgo": 6,
+      "daysAgo": 7,
       "heatLevel": "none",
       "heatCount": 0,
       "agentRevealCount": 0,
@@ -297,7 +297,7 @@
       "totalFloors": 3,
       "price": 5800,
       "pricePerSqm": 97,
-      "daysAgo": 7,
+      "daysAgo": 8,
       "heatLevel": "none",
       "heatCount": 0,
       "agentRevealCount": 0,
@@ -363,7 +363,7 @@
       "totalFloors": 4,
       "price": 7850,
       "pricePerSqm": 174,
-      "daysAgo": 9,
+      "daysAgo": 10,
       "heatLevel": "none",
       "heatCount": 0,
       "agentRevealCount": 0,
